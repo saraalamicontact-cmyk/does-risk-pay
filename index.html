@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Does Risk Pay?</title>
+  <meta name="description" content="A 63-year test of the CAPM on US stocks, and a sector monitor refreshed every trading day.">
+
+  <!-- Preview when the link is shared on WhatsApp, LinkedIn... -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Does Risk Pay? A 63-year test of the CAPM">
+  <meta property="og:description" content="Higher beta should mean higher return. Over 759 months of US stocks, it paid half as much. Plus a sector monitor refreshed every trading day.">
+  <meta property="og:image" content="https://saraalamicontact-cmyk.github.io/does-risk-pay/og-image.png">
+  <meta property="og:url" content="https://saraalamicontact-cmyk.github.io/does-risk-pay/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="#top">Does Risk Pay?</a>
+    <nav class="nav">
+      <a href="#today">Today</a>
+      <a href="#test">The test</a>
+      <a href="#recessions">Recessions</a>
+      <a href="#built">How it's built</a>
+    </nav>
+    <a class="btn btn-whatsapp btn-small js-whatsapp" href="#" target="_blank" rel="noopener">Share</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ==== Hero: the question and the answer ==== -->
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">A 63-year test of Sharpe's CAPM (1964)</p>
+      <h1>Does more risk mean more return?</h1>
+      <p class="lede">
+        The CAPM says each extra unit of market risk, <em>beta</em>, should earn the full market premium.
+        We tested it on <span class="js-months">759</span> months of US stocks, then built a monitor that reads the market every morning.
+      </p>
+
+      <div class="answer">
+        <p class="answer-label">Short answer</p>
+        <p class="answer-text">Risk pays, but only about <strong>half</strong> as much as the theory says.</p>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <p class="stat-value"><span class="js-sml-slope">3.5</span>%</p>
+          <p class="stat-label">Actual reward per unit of beta, per year</p>
+        </div>
+        <div class="stat">
+          <p class="stat-value muted"><span class="js-market-premium">7.2</span>%</p>
+          <p class="stat-label">What the CAPM predicts (the market premium)</p>
+        </div>
+        <div class="stat">
+          <p class="stat-value"><span class="js-intercept">4.3</span>%</p>
+          <p class="stat-label">Return with zero beta, where the CAPM says 0%</p>
+        </div>
+        <div class="stat">
+          <p class="stat-value">+<span class="js-d1-alpha">2.4</span>%</p>
+          <p class="stat-label">Extra return of the lowest-beta stocks (D1), per year</p>
+        </div>
+      </div>
+
+      <div class="share-row">
+        <a class="btn btn-whatsapp js-whatsapp" href="#" target="_blank" rel="noopener">Share on WhatsApp</a>
+        <button class="btn btn-outline js-copy" type="button">Copy link</button>
+        <span class="toast js-toast" role="status"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==== Today's market ==== -->
+  <section id="today" class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Live monitor</p>
+        <h2>Today's market</h2>
+        <p class="updated">Market data as of <strong class="js-as-of">—</strong> · refreshed every trading day at 8:00</p>
+      </div>
+
+      <div class="kpis">
+        <div class="kpi">
+          <p class="kpi-label">Market regime</p>
+          <p class="kpi-value"><span class="regime js-regime">—</span></p>
+          <p class="kpi-note js-regime-note"></p>
+        </div>
+        <div class="kpi">
+          <p class="kpi-label">S&amp;P 500 from its 12-month high</p>
+          <p class="kpi-value mono js-drawdown">—</p>
+        </div>
+        <div class="kpi">
+          <p class="kpi-label">Sector signals</p>
+          <p class="kpi-value mono"><span class="pos js-overweight">—</span> overweight · <span class="neg js-underweight">—</span> underweight</p>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <figure class="panel">
+          <figcaption>S&amp;P 500 vs its 200-day average, last 2 years</figcaption>
+          <div class="chart"><canvas id="chart-regime"></canvas></div>
+          <p class="note">Shaded weeks: the market was not in a risk-on regime.</p>
+        </figure>
+        <figure class="panel">
+          <figcaption>3-month return by sector, coloured by signal</figcaption>
+          <div class="chart"><canvas id="chart-sectors"></canvas></div>
+        </figure>
+      </div>
+
+      <div class="panel table-panel">
+        <div class="table-scroll">
+          <table class="signals">
+            <thead>
+              <tr>
+                <th>Sector</th><th>ETF</th><th class="num">1 month</th><th class="num">3 months</th>
+                <th class="num">vs S&amp;P 500</th><th class="num">Beta (1Y)</th><th>Style</th><th>Signal</th>
+              </tr>
+            </thead>
+            <tbody class="js-signals"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <details class="rules">
+        <summary>How the signals work</summary>
+        <ul>
+          <li><strong>Market regime</strong> (S&amp;P 500): <em>Risk-on</em> above its 200-day average and less than 10% below its 12-month high;
+            <em>Caution</em> below its 200-day average; <em>Correction</em> 10 to 20% below its high; <em>Bear market</em> more than 20% below.</li>
+          <li><strong>Style</strong> (1-year beta): <em>Defensive</em> below 0.9, <em>Aggressive</em> above 1.1, as in Sharpe (1964, p. 441-442).</li>
+          <li><strong>Risk-on</strong>: follow the trend. Overweight a sector above its 200-day average that beat the market over 3 months.</li>
+          <li><strong>Any other regime</strong>: protect the portfolio. Favour defensive sectors, which held up best in past recessions.</li>
+        </ul>
+        <p class="note">Rule-based signals built for a class project. Not investment advice.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ==== The CAPM test ==== -->
+  <section id="test" class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">The research</p>
+        <h2>The test: 10 portfolios sorted by beta</h2>
+        <p class="section-lede">
+          US stocks are sorted into 10 portfolios, from the lowest beta (D1) to the highest (D10).
+          If the CAPM is right, their returns sit on the dashed line. They don't: the actual line is
+          <strong>half as steep</strong> and starts well above zero.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <figure class="panel">
+          <figcaption>Security Market Line: actual vs CAPM (% per year)</figcaption>
+          <div class="chart"><canvas id="chart-sml"></canvas></div>
+        </figure>
+        <figure class="panel">
+          <figcaption>Excess return by beta decile: actual vs CAPM prediction (% per year)</figcaption>
+          <div class="chart"><canvas id="chart-deciles"></canvas></div>
+        </figure>
+      </div>
+
+      <div class="findings">
+        <div class="finding">
+          <p class="finding-num">01</p>
+          <p><strong>Low beta earns too much.</strong> D1 beats its CAPM prediction by <span class="js-d1-alpha">2.4</span>% a year (t = 2.48, significant).</p>
+        </div>
+        <div class="finding">
+          <p class="finding-num">02</p>
+          <p><strong>High beta earns too little.</strong> D10 has 2.7 times the beta of D1, but earns only about 2 points more.</p>
+        </div>
+        <div class="finding">
+          <p class="finding-num">03</p>
+          <p><strong>Joint test.</strong> GRS = <span class="js-grs">1.78</span>, p = <span class="js-grs-p">0.061</span>: the 10 alphas are jointly non-zero at the 10% level, not at 5%.</p>
+        </div>
+      </div>
+      <p class="source">Data: Kenneth R. French Data Library, value-weighted portfolios, <span class="js-period">1963-07 to 2026-09</span>. Same results in R, Databricks SQL and Python.</p>
+    </div>
+  </section>
+
+  <!-- ==== Recessions ==== -->
+  <section id="recessions" class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Defensive vs aggressive</p>
+        <h2>Which sectors hold up in recessions?</h2>
+        <p class="section-lede">
+          In the <span class="js-rec-months">85</span> months of NBER recessions, the market lost
+          <strong class="js-rec-premium">7.4</strong>% a year over the risk-free rate.
+          Retail, healthcare and consumer staples held up; energy and manufacturing fell hardest.
+          This is Sharpe's split between "defensive" and "aggressive" assets.
+        </p>
+      </div>
+      <figure class="panel">
+        <figcaption>Excess return by industry: expansion vs recession (% per year)</figcaption>
+        <div class="chart chart-tall"><canvas id="chart-cycles"></canvas></div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ==== How it's built ==== -->
+  <section id="built" class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Behind the scenes</p>
+        <h2>How it's built</h2>
+        <p class="section-lede">Directed step by step with Claude Code, from raw CSV files to this page.</p>
+      </div>
+      <ol class="pipeline">
+        <li><span class="step-tool">Data</span><p>Kenneth French Data Library (monthly, since 1963) and Yahoo Finance (daily sector ETFs).</p></li>
+        <li><span class="step-tool">Python</span><p>pandas and statsmodels: CAPM regressions, OLS diagnostics, Newey-West, GRS, Fama-MacBeth.</p></li>
+        <li><span class="step-tool">Databricks SQL</span><p>Bronze, silver and gold tables. The CAPM beta is computed in pure SQL as covariance / variance.</p></li>
+        <li><span class="step-tool">Power BI</span><p>A 3-page dashboard connected to the gold tables.</p></li>
+        <li><span class="step-tool">This website</span><p>A Windows scheduled task runs the pipeline every trading morning and republishes the data here.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ==== Conclusion ==== -->
+  <section class="section conclusion">
+    <div class="wrap">
+      <h2>So, does risk pay?</h2>
+      <p class="section-lede">
+        Yes, but not the way Sharpe predicted. The reward for beta is real but flat, low-beta stocks are underpriced,
+        and defensive sectors protect investors when the economy turns. These gaps point to the assumptions Sharpe himself
+        called "highly restrictive": unlimited borrowing at the risk-free rate and identical investors.
+      </p>
+      <div class="share-row">
+        <a class="btn btn-whatsapp js-whatsapp" href="#" target="_blank" rel="noopener">Share on WhatsApp</a>
+        <button class="btn btn-outline js-copy" type="button">Copy link</button>
+        <span class="toast js-toast" role="status"></span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <p>Built with Claude Code by Sara Alami · Data: Kenneth R. French Data Library, NBER, Yahoo Finance · Page data updated <span class="js-updated">—</span></p>
+    <p>For education only. Nothing on this page is investment advice.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="data/site.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

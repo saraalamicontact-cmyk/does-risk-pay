@@ -51,6 +51,13 @@ function fillNumbers() {
   setText(".js-rec-premium", Math.abs(DATA.cycles.market_premium_recession).toFixed(1));
   setText(".js-updated", DATA.updated);
 
+  // Recession returns of three industries, for the verdict of prediction 3
+  DATA.cycles.sectors.forEach((s) => {
+    if (s.sector === "Energy") setText(".js-energy-rec", s.recession.toFixed(1));
+    if (s.sector === "Manufacturing") setText(".js-manuf-rec", s.recession.toFixed(1));
+    if (s.sector === "Retail") setText(".js-retail-rec", "+" + s.recession.toFixed(1));
+  });
+
   const monitor = DATA.monitor;
   setText(".js-as-of", formatDate(monitor.as_of));
   setText(".js-regime", monitor.regime);

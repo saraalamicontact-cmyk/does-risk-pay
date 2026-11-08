@@ -27,10 +27,11 @@
   <div class="wrap topbar-inner">
     <a class="brand" href="#top">Does Risk Pay?</a>
     <nav class="nav">
-      <a href="#today">Today</a>
+      <a href="#theory">Theory</a>
       <a href="#test">The test</a>
       <a href="#recessions">Recessions</a>
-      <a href="#built">How it's built</a>
+      <a href="#today">Today</a>
+      <a href="#conclusion">Conclusion</a>
     </nav>
     <a class="btn btn-whatsapp btn-small js-whatsapp" href="#" target="_blank" rel="noopener">Share</a>
   </div>
@@ -77,6 +78,110 @@
         <button class="btn btn-outline js-copy" type="button">Copy link</button>
         <span class="toast js-toast" role="status"></span>
       </div>
+    </div>
+  </section>
+
+  <!-- ==== The theory in 30 seconds ==== -->
+  <section id="theory" class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">The theory in 30 seconds</p>
+        <h2>Sharpe's Capital Asset Pricing Model (1964)</h2>
+        <p class="section-lede">
+          In 1964, William Sharpe (Nobel Prize 1990) asked how risky assets should be priced. His idea: investors can remove
+          the risk of a single company by holding many stocks, so <strong>only the risk you cannot diversify away, market risk,
+          should be rewarded</strong>. Market risk is measured by <em>beta</em>: when the market moves by 1%, a stock with a beta
+          of 1.5 moves by 1.5% on average.
+        </p>
+      </div>
+
+      <div class="formula">
+        <p class="formula-label">The CAPM in one line</p>
+        <p class="formula-text">Extra return of a stock = <em>beta</em> &times; market premium (<span class="js-market-premium">7.2</span>% a year)</p>
+        <p class="note">Extra return = return above safe US Treasury bills. Market premium = the extra return of the whole US stock market since 1963.</p>
+      </div>
+
+      <h3 class="sub-head">If Sharpe is right, the data should show three things</h3>
+      <div class="predictions">
+        <div class="prediction">
+          <p class="prediction-num">Prediction 1</p>
+          <p class="prediction-title">Return rises with beta, in a straight line</p>
+          <p>Each extra unit of beta should earn the full market premium: <span class="js-market-premium">7.2</span>% a year.</p>
+        </div>
+        <div class="prediction">
+          <p class="prediction-num">Prediction 2</p>
+          <p class="prediction-title">No market risk, no extra return</p>
+          <p>A portfolio with a beta of zero should earn 0% above T-bills, and no portfolio should beat its CAPM prediction (alpha = 0).</p>
+        </div>
+        <div class="prediction">
+          <p class="prediction-num">Prediction 3</p>
+          <p class="prediction-title">In bad times, high beta hurts most</p>
+          <p>Sharpe calls low-beta assets "defensive" and high-beta assets "aggressive": in recessions, aggressive sectors should fall the most.</p>
+        </div>
+      </div>
+      <p class="source">How we test it: US stocks sorted into 10 portfolios by beta (D1 lowest, D10 highest), <span class="js-months">759</span> months of data, regressions in Python, SQL and R.</p>
+    </div>
+  </section>
+
+  <!-- ==== The CAPM test ==== -->
+  <section id="test" class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">The research</p>
+        <h2>The test: 10 portfolios sorted by beta</h2>
+        <p class="section-lede">
+          Testing predictions 1 and 2. US stocks are sorted into 10 portfolios, from the lowest beta (D1) to the highest (D10).
+          If the CAPM is right, their returns sit on the dashed line. They don't: the actual line is
+          <strong>half as steep</strong> and starts well above zero.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <figure class="panel">
+          <figcaption>Security Market Line: actual vs CAPM (% per year)</figcaption>
+          <div class="chart"><canvas id="chart-sml"></canvas></div>
+        </figure>
+        <figure class="panel">
+          <figcaption>Excess return by beta decile: actual vs CAPM prediction (% per year)</figcaption>
+          <div class="chart"><canvas id="chart-deciles"></canvas></div>
+        </figure>
+      </div>
+
+      <div class="findings">
+        <div class="finding">
+          <p class="finding-num">01</p>
+          <p><strong>Low beta earns too much.</strong> D1 beats its CAPM prediction by <span class="js-d1-alpha">2.4</span>% a year (t = 2.48, significant).</p>
+        </div>
+        <div class="finding">
+          <p class="finding-num">02</p>
+          <p><strong>High beta earns too little.</strong> D10 has 2.7 times the beta of D1, but earns only about 2 points more.</p>
+        </div>
+        <div class="finding">
+          <p class="finding-num">03</p>
+          <p><strong>Joint test.</strong> GRS = <span class="js-grs">1.78</span>, p = <span class="js-grs-p">0.061</span>: the 10 alphas are jointly non-zero at the 10% level, not at 5%.</p>
+        </div>
+      </div>
+      <p class="source">Data: Kenneth R. French Data Library, value-weighted portfolios, <span class="js-period">1963-07 to 2026-09</span>. Same results in R, Databricks SQL and Python.</p>
+    </div>
+  </section>
+
+  <!-- ==== Recessions ==== -->
+  <section id="recessions" class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Defensive vs aggressive</p>
+        <h2>Which sectors hold up in recessions?</h2>
+        <p class="section-lede">
+          Testing prediction 3. In the <span class="js-rec-months">85</span> months of NBER recessions, the market lost
+          <strong class="js-rec-premium">7.4</strong>% a year over the risk-free rate.
+          Retail, healthcare and consumer staples held up; energy and manufacturing fell hardest.
+          This is Sharpe's split between "defensive" and "aggressive" assets.
+        </p>
+      </div>
+      <figure class="panel">
+        <figcaption>Excess return by industry: expansion vs recession (% per year)</figcaption>
+        <div class="chart chart-tall"><canvas id="chart-cycles"></canvas></div>
+      </figure>
     </div>
   </section>
 
@@ -145,68 +250,6 @@
     </div>
   </section>
 
-  <!-- ==== The CAPM test ==== -->
-  <section id="test" class="section">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">The research</p>
-        <h2>The test: 10 portfolios sorted by beta</h2>
-        <p class="section-lede">
-          US stocks are sorted into 10 portfolios, from the lowest beta (D1) to the highest (D10).
-          If the CAPM is right, their returns sit on the dashed line. They don't: the actual line is
-          <strong>half as steep</strong> and starts well above zero.
-        </p>
-      </div>
-
-      <div class="grid-2">
-        <figure class="panel">
-          <figcaption>Security Market Line: actual vs CAPM (% per year)</figcaption>
-          <div class="chart"><canvas id="chart-sml"></canvas></div>
-        </figure>
-        <figure class="panel">
-          <figcaption>Excess return by beta decile: actual vs CAPM prediction (% per year)</figcaption>
-          <div class="chart"><canvas id="chart-deciles"></canvas></div>
-        </figure>
-      </div>
-
-      <div class="findings">
-        <div class="finding">
-          <p class="finding-num">01</p>
-          <p><strong>Low beta earns too much.</strong> D1 beats its CAPM prediction by <span class="js-d1-alpha">2.4</span>% a year (t = 2.48, significant).</p>
-        </div>
-        <div class="finding">
-          <p class="finding-num">02</p>
-          <p><strong>High beta earns too little.</strong> D10 has 2.7 times the beta of D1, but earns only about 2 points more.</p>
-        </div>
-        <div class="finding">
-          <p class="finding-num">03</p>
-          <p><strong>Joint test.</strong> GRS = <span class="js-grs">1.78</span>, p = <span class="js-grs-p">0.061</span>: the 10 alphas are jointly non-zero at the 10% level, not at 5%.</p>
-        </div>
-      </div>
-      <p class="source">Data: Kenneth R. French Data Library, value-weighted portfolios, <span class="js-period">1963-07 to 2026-09</span>. Same results in R, Databricks SQL and Python.</p>
-    </div>
-  </section>
-
-  <!-- ==== Recessions ==== -->
-  <section id="recessions" class="section">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">Defensive vs aggressive</p>
-        <h2>Which sectors hold up in recessions?</h2>
-        <p class="section-lede">
-          In the <span class="js-rec-months">85</span> months of NBER recessions, the market lost
-          <strong class="js-rec-premium">7.4</strong>% a year over the risk-free rate.
-          Retail, healthcare and consumer staples held up; energy and manufacturing fell hardest.
-          This is Sharpe's split between "defensive" and "aggressive" assets.
-        </p>
-      </div>
-      <figure class="panel">
-        <figcaption>Excess return by industry: expansion vs recession (% per year)</figcaption>
-        <div class="chart chart-tall"><canvas id="chart-cycles"></canvas></div>
-      </figure>
-    </div>
-  </section>
-
   <!-- ==== How it's built ==== -->
   <section id="built" class="section">
     <div class="wrap">
@@ -226,13 +269,43 @@
   </section>
 
   <!-- ==== Conclusion ==== -->
-  <section class="section conclusion">
+  <section id="conclusion" class="section conclusion">
     <div class="wrap">
+      <p class="eyebrow">Conclusion</p>
       <h2>So, does risk pay?</h2>
+      <p class="section-lede">Three predictions, three verdicts.</p>
+
+      <div class="table-scroll verdict-wrap">
+        <table class="verdicts">
+          <thead><tr><th>Sharpe predicts</th><th>What the data show</th><th>Verdict</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>1.</strong> Return rises with beta, by <span class="js-market-premium">7.2</span>% a year per unit</td>
+              <td>Return rises with beta, but only by <span class="js-sml-slope">3.5</span>% a year per unit: the line is half as steep</td>
+              <td><span class="verdict" data-verdict="partly">Partly</span></td>
+            </tr>
+            <tr>
+              <td><strong>2.</strong> Zero beta earns 0%, every alpha is 0</td>
+              <td>Zero beta earns <span class="js-intercept">4.3</span>%; low-beta stocks earn <span class="js-d1-alpha">2.4</span>% a year too much (significant); GRS p = <span class="js-grs-p">0.061</span></td>
+              <td><span class="verdict" data-verdict="no">Rejected</span></td>
+            </tr>
+            <tr>
+              <td><strong>3.</strong> In recessions, aggressive sectors fall the most</td>
+              <td>Energy <span class="js-energy-rec">-14.0</span>% and manufacturing <span class="js-manuf-rec">-11.2</span>% a year, while retail still earns <span class="js-retail-rec">+6.1</span>%</td>
+              <td><span class="verdict" data-verdict="yes">Confirmed</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="answer">
+        <p class="answer-label">What we proved</p>
+        <p class="answer-text">More risk brings more return, but only <strong>half</strong> as much as the theory says. Low-risk stocks are a better deal than the CAPM predicts, and risky sectors are hit hardest in a crisis.</p>
+      </div>
       <p class="section-lede">
-        Yes, but not the way Sharpe predicted. The reward for beta is real but flat, low-beta stocks are underpriced,
-        and defensive sectors protect investors when the economy turns. These gaps point to the assumptions Sharpe himself
-        called "highly restrictive": unlimited borrowing at the risk-free rate and identical investors.
+        Why? Sharpe himself called his assumptions "highly restrictive". He assumed everyone can borrow at the risk-free rate.
+        In reality, investors who want more return often buy high-beta stocks instead of borrowing, which pushes their prices up
+        and their future returns down (Black, 1972; Frazzini and Pedersen, 2014).
       </p>
       <div class="share-row">
         <a class="btn btn-whatsapp js-whatsapp" href="#" target="_blank" rel="noopener">Share on WhatsApp</a>

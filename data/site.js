@@ -1,5 +1,5 @@
 window.SITE_DATA = {
- "updated": "2026-11-09 22:12",
+ "updated": "2026-11-09 22:21",
  "monitor": {
   "as_of": "2026-11-09",
   "regime": "Risk-on",
@@ -475,7 +475,7 @@ window.SITE_DATA = {
    {
     "date": "2026-01-02",
     "spy": 677.88,
-    "ma200": 619.33,
+    "ma200": 619.32,
     "risk_on": true
    },
    {

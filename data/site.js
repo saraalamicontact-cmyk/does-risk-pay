@@ -1,19 +1,19 @@
 window.SITE_DATA = {
- "updated": "2026-11-09 10:34",
+ "updated": "2026-11-09 21:57",
  "monitor": {
-  "as_of": "2026-11-06",
+  "as_of": "2026-11-09",
   "regime": "Risk-on",
-  "spy_drawdown": -5.6,
+  "spy_drawdown": -3.4,
   "overweight": 7,
-  "underweight": 3,
+  "underweight": 2,
   "sectors": [
    {
     "ticker": "XLV",
     "sector": "Health care",
-    "return_1m": 9.9,
-    "return_3m": 10.1,
-    "relative_3m": 14.8,
-    "beta": 0.29,
+    "return_1m": 10.3,
+    "return_3m": 12.5,
+    "relative_3m": 14.6,
+    "beta": 0.31,
     "style": "Defensive",
     "above_ma200": true,
     "signal": "Overweight"
@@ -21,10 +21,10 @@ window.SITE_DATA = {
    {
     "ticker": "XLP",
     "sector": "Consumer staples",
-    "return_1m": 8.0,
-    "return_3m": 6.7,
-    "relative_3m": 11.4,
-    "beta": -0.06,
+    "return_1m": 8.9,
+    "return_3m": 8.0,
+    "relative_3m": 10.1,
+    "beta": -0.05,
     "style": "Defensive",
     "above_ma200": true,
     "signal": "Overweight"
@@ -32,43 +32,21 @@ window.SITE_DATA = {
    {
     "ticker": "XLE",
     "sector": "Energy",
-    "return_1m": -5.5,
-    "return_3m": 3.0,
-    "relative_3m": 7.6,
-    "beta": -0.35,
+    "return_1m": -4.8,
+    "return_3m": 2.3,
+    "relative_3m": 4.3,
+    "beta": -0.34,
     "style": "Defensive",
     "above_ma200": true,
     "signal": "Overweight"
-   },
-   {
-    "ticker": "XLU",
-    "sector": "Utilities",
-    "return_1m": 5.0,
-    "return_3m": 0.7,
-    "relative_3m": 5.4,
-    "beta": 0.1,
-    "style": "Defensive",
-    "above_ma200": false,
-    "signal": "Neutral"
    },
    {
     "ticker": "XLRE",
     "sector": "Real estate",
-    "return_1m": 7.7,
-    "return_3m": -0.1,
-    "relative_3m": 4.6,
-    "beta": 0.3,
-    "style": "Defensive",
-    "above_ma200": true,
-    "signal": "Overweight"
-   },
-   {
-    "ticker": "XLF",
-    "sector": "Financials",
-    "return_1m": 5.4,
-    "return_3m": -0.8,
-    "relative_3m": 3.9,
-    "beta": 0.61,
+    "return_1m": 7.3,
+    "return_3m": 2.1,
+    "relative_3m": 4.2,
+    "beta": 0.31,
     "style": "Defensive",
     "above_ma200": true,
     "signal": "Overweight"
@@ -76,20 +54,42 @@ window.SITE_DATA = {
    {
     "ticker": "XLY",
     "sector": "Consumer discretionary",
-    "return_1m": 5.2,
-    "return_3m": -1.5,
-    "relative_3m": 3.1,
+    "return_1m": 7.2,
+    "return_3m": 1.7,
+    "relative_3m": 3.8,
     "beta": 1.11,
     "style": "Aggressive",
     "above_ma200": true,
     "signal": "Overweight"
    },
    {
+    "ticker": "XLU",
+    "sector": "Utilities",
+    "return_1m": 5.8,
+    "return_3m": 1.1,
+    "relative_3m": 3.2,
+    "beta": 0.12,
+    "style": "Defensive",
+    "above_ma200": false,
+    "signal": "Neutral"
+   },
+   {
+    "ticker": "XLF",
+    "sector": "Financials",
+    "return_1m": 6.0,
+    "return_3m": 0.7,
+    "relative_3m": 2.8,
+    "beta": 0.61,
+    "style": "Defensive",
+    "above_ma200": true,
+    "signal": "Overweight"
+   },
+   {
     "ticker": "XLB",
     "sector": "Materials",
-    "return_1m": 5.4,
-    "return_3m": -1.9,
-    "relative_3m": 2.8,
+    "return_1m": 7.1,
+    "return_3m": -0.1,
+    "relative_3m": 2.0,
     "beta": 0.69,
     "style": "Defensive",
     "above_ma200": true,
@@ -98,10 +98,10 @@ window.SITE_DATA = {
    {
     "ticker": "XLC",
     "sector": "Communication services",
-    "return_1m": -6.5,
-    "return_3m": -6.0,
-    "relative_3m": -1.3,
-    "beta": 0.64,
+    "return_1m": -2.7,
+    "return_3m": -3.2,
+    "relative_3m": -1.1,
+    "beta": 0.65,
     "style": "Defensive",
     "above_ma200": false,
     "signal": "Underweight"
@@ -109,21 +109,21 @@ window.SITE_DATA = {
    {
     "ticker": "XLK",
     "sector": "Technology",
-    "return_1m": -16.7,
-    "return_3m": -11.5,
-    "relative_3m": -6.8,
-    "beta": 1.79,
+    "return_1m": -14.0,
+    "return_3m": -8.1,
+    "relative_3m": -6.0,
+    "beta": 1.78,
     "style": "Aggressive",
-    "above_ma200": false,
-    "signal": "Underweight"
+    "above_ma200": true,
+    "signal": "Neutral"
    },
    {
     "ticker": "XLI",
     "sector": "Industrials",
-    "return_1m": -3.4,
-    "return_3m": -11.6,
-    "relative_3m": -7.0,
-    "beta": 0.92,
+    "return_1m": -0.2,
+    "return_3m": -8.8,
+    "relative_3m": -6.7,
+    "beta": 0.95,
     "style": "Neutral",
     "above_ma200": false,
     "signal": "Underweight"
@@ -131,609 +131,603 @@ window.SITE_DATA = {
   ],
   "history": [
    {
-    "date": "2024-11-06",
-    "spy": 577.71,
-    "ma200": 521.45,
+    "date": "2024-11-11",
+    "spy": 585.25,
+    "ma200": 523.13,
     "risk_on": true
    },
    {
-    "date": "2024-11-13",
-    "spy": 583.72,
-    "ma200": 524.22,
+    "date": "2024-11-18",
+    "spy": 574.88,
+    "ma200": 525.75,
     "risk_on": true
    },
    {
-    "date": "2024-11-20",
-    "spy": 577.18,
-    "ma200": 526.75,
+    "date": "2024-11-25",
+    "spy": 584.05,
+    "ma200": 528.23,
     "risk_on": true
    },
    {
-    "date": "2024-11-27",
-    "spy": 585.32,
-    "ma200": 529.27,
+    "date": "2024-12-03",
+    "spy": 590.29,
+    "ma200": 530.86,
     "risk_on": true
    },
    {
-    "date": "2024-12-05",
-    "spy": 592.98,
-    "ma200": 531.98,
+    "date": "2024-12-10",
+    "spy": 589.2,
+    "ma200": 533.48,
     "risk_on": true
    },
    {
-    "date": "2024-12-12",
-    "spy": 590.7,
-    "ma200": 534.5,
+    "date": "2024-12-17",
+    "spy": 590.66,
+    "ma200": 535.95,
     "risk_on": true
    },
    {
-    "date": "2024-12-19",
-    "spy": 572.88,
-    "ma200": 536.76,
+    "date": "2024-12-24",
+    "spy": 589.71,
+    "ma200": 538.07,
     "risk_on": true
    },
    {
-    "date": "2024-12-27",
-    "spy": 583.55,
-    "ma200": 538.94,
+    "date": "2025-01-02",
+    "spy": 573.38,
+    "ma200": 540.11,
     "risk_on": true
    },
    {
-    "date": "2025-01-06",
-    "spy": 583.89,
-    "ma200": 540.9,
+    "date": "2025-01-10",
+    "spy": 569.31,
+    "ma200": 541.93,
     "risk_on": true
    },
    {
-    "date": "2025-01-14",
-    "spy": 570.97,
-    "ma200": 542.57,
+    "date": "2025-01-17",
+    "spy": 586.07,
+    "ma200": 543.72,
     "risk_on": true
    },
    {
-    "date": "2025-01-22",
-    "spy": 594.76,
-    "ma200": 544.63,
+    "date": "2025-01-27",
+    "spy": 587.82,
+    "ma200": 545.98,
     "risk_on": true
    },
    {
-    "date": "2025-01-29",
-    "spy": 590.21,
-    "ma200": 546.89,
+    "date": "2025-02-03",
+    "spy": 586.25,
+    "ma200": 548.36,
     "risk_on": true
    },
    {
-    "date": "2025-02-05",
-    "spy": 592.58,
-    "ma200": 549.42,
+    "date": "2025-02-10",
+    "spy": 593.2,
+    "ma200": 551.01,
     "risk_on": true
    },
    {
-    "date": "2025-02-12",
-    "spy": 591.73,
-    "ma200": 552.04,
+    "date": "2025-02-18",
+    "spy": 599.71,
+    "ma200": 553.64,
     "risk_on": true
    },
    {
-    "date": "2025-02-20",
-    "spy": 598.62,
-    "ma200": 554.75,
+    "date": "2025-02-25",
+    "spy": 582.79,
+    "ma200": 556.03,
     "risk_on": true
    },
    {
-    "date": "2025-02-27",
-    "spy": 573.78,
-    "ma200": 556.78,
+    "date": "2025-03-04",
+    "spy": 565.75,
+    "ma200": 557.78,
     "risk_on": true
    },
    {
-    "date": "2025-03-06",
-    "spy": 561.68,
-    "ma200": 558.31,
-    "risk_on": true
-   },
-   {
-    "date": "2025-03-13",
-    "spy": 540.8,
-    "ma200": 559.2,
+    "date": "2025-03-11",
+    "spy": 545.21,
+    "ma200": 558.88,
     "risk_on": false
    },
    {
-    "date": "2025-03-20",
-    "spy": 554.59,
-    "ma200": 560.25,
+    "date": "2025-03-18",
+    "spy": 550.21,
+    "ma200": 559.79,
     "risk_on": false
    },
    {
-    "date": "2025-03-27",
-    "spy": 557.83,
-    "ma200": 561.34,
+    "date": "2025-03-25",
+    "spy": 566.07,
+    "ma200": 560.95,
+    "risk_on": true
+   },
+   {
+    "date": "2025-04-01",
+    "spy": 551.82,
+    "ma200": 561.75,
     "risk_on": false
    },
    {
-    "date": "2025-04-03",
-    "spy": 527.94,
-    "ma200": 561.89,
+    "date": "2025-04-08",
+    "spy": 488.38,
+    "ma200": 561.32,
     "risk_on": false
    },
    {
-    "date": "2025-04-10",
-    "spy": 516.02,
-    "ma200": 561.31,
+    "date": "2025-04-15",
+    "spy": 528.84,
+    "ma200": 561.25,
     "risk_on": false
    },
    {
-    "date": "2025-04-17",
-    "spy": 517.82,
-    "ma200": 561.12,
+    "date": "2025-04-23",
+    "spy": 526.68,
+    "ma200": 560.81,
     "risk_on": false
    },
    {
-    "date": "2025-04-25",
-    "spy": 541.66,
-    "ma200": 560.79,
+    "date": "2025-04-30",
+    "spy": 545.49,
+    "ma200": 560.78,
     "risk_on": false
    },
    {
-    "date": "2025-05-02",
-    "spy": 557.51,
-    "ma200": 560.83,
+    "date": "2025-05-07",
+    "spy": 551.99,
+    "ma200": 561.03,
     "risk_on": false
    },
    {
-    "date": "2025-05-09",
-    "spy": 555.13,
-    "ma200": 561.18,
+    "date": "2025-05-14",
+    "spy": 578.0,
+    "ma200": 561.91,
+    "risk_on": true
+   },
+   {
+    "date": "2025-05-21",
+    "spy": 573.35,
+    "ma200": 563.23,
+    "risk_on": true
+   },
+   {
+    "date": "2025-05-29",
+    "spy": 580.42,
+    "ma200": 564.87,
+    "risk_on": true
+   },
+   {
+    "date": "2025-06-05",
+    "spy": 583.37,
+    "ma200": 566.18,
+    "risk_on": true
+   },
+   {
+    "date": "2025-06-12",
+    "spy": 593.9,
+    "ma200": 567.34,
+    "risk_on": true
+   },
+   {
+    "date": "2025-06-20",
+    "spy": 586.31,
+    "ma200": 568.39,
+    "risk_on": true
+   },
+   {
+    "date": "2025-06-27",
+    "spy": 606.66,
+    "ma200": 570.05,
+    "risk_on": true
+   },
+   {
+    "date": "2025-07-07",
+    "spy": 612.36,
+    "ma200": 571.77,
+    "risk_on": true
+   },
+   {
+    "date": "2025-07-14",
+    "spy": 616.43,
+    "ma200": 573.33,
+    "risk_on": true
+   },
+   {
+    "date": "2025-07-21",
+    "spy": 620.34,
+    "ma200": 574.8,
+    "risk_on": true
+   },
+   {
+    "date": "2025-07-28",
+    "spy": 628.4,
+    "ma200": 576.54,
+    "risk_on": true
+   },
+   {
+    "date": "2025-08-04",
+    "spy": 622.71,
+    "ma200": 577.97,
+    "risk_on": true
+   },
+   {
+    "date": "2025-08-11",
+    "spy": 627.39,
+    "ma200": 579.36,
+    "risk_on": true
+   },
+   {
+    "date": "2025-08-18",
+    "spy": 634.67,
+    "ma200": 581.06,
+    "risk_on": true
+   },
+   {
+    "date": "2025-08-25",
+    "spy": 633.86,
+    "ma200": 582.82,
+    "risk_on": true
+   },
+   {
+    "date": "2025-09-02",
+    "spy": 631.68,
+    "ma200": 584.27,
+    "risk_on": true
+   },
+   {
+    "date": "2025-09-09",
+    "spy": 641.61,
+    "ma200": 585.77,
+    "risk_on": true
+   },
+   {
+    "date": "2025-09-16",
+    "spy": 651.15,
+    "ma200": 587.49,
+    "risk_on": true
+   },
+   {
+    "date": "2025-09-23",
+    "spy": 656.13,
+    "ma200": 589.16,
+    "risk_on": true
+   },
+   {
+    "date": "2025-09-30",
+    "spy": 659.07,
+    "ma200": 590.74,
+    "risk_on": true
+   },
+   {
+    "date": "2025-10-07",
+    "spy": 661.98,
+    "ma200": 592.5,
+    "risk_on": true
+   },
+   {
+    "date": "2025-10-14",
+    "spy": 655.16,
+    "ma200": 594.44,
+    "risk_on": true
+   },
+   {
+    "date": "2025-10-21",
+    "spy": 664.12,
+    "ma200": 596.44,
+    "risk_on": true
+   },
+   {
+    "date": "2025-10-28",
+    "spy": 679.73,
+    "ma200": 598.76,
+    "risk_on": true
+   },
+   {
+    "date": "2025-11-04",
+    "spy": 668.03,
+    "ma200": 601.17,
+    "risk_on": true
+   },
+   {
+    "date": "2025-11-11",
+    "spy": 675.71,
+    "ma200": 603.06,
+    "risk_on": true
+   },
+   {
+    "date": "2025-11-18",
+    "spy": 653.03,
+    "ma200": 604.89,
+    "risk_on": true
+   },
+   {
+    "date": "2025-11-25",
+    "spy": 667.82,
+    "ma200": 606.5,
+    "risk_on": true
+   },
+   {
+    "date": "2025-12-03",
+    "spy": 676.59,
+    "ma200": 608.46,
+    "risk_on": true
+   },
+   {
+    "date": "2025-12-10",
+    "spy": 680.23,
+    "ma200": 610.61,
+    "risk_on": true
+   },
+   {
+    "date": "2025-12-17",
+    "spy": 664.23,
+    "ma200": 613.05,
+    "risk_on": true
+   },
+   {
+    "date": "2025-12-24",
+    "spy": 685.03,
+    "ma200": 616.04,
+    "risk_on": true
+   },
+   {
+    "date": "2026-01-02",
+    "spy": 677.88,
+    "ma200": 619.33,
+    "risk_on": true
+   },
+   {
+    "date": "2026-01-09",
+    "spy": 688.69,
+    "ma200": 622.47,
+    "risk_on": true
+   },
+   {
+    "date": "2026-01-16",
+    "spy": 686.3,
+    "ma200": 625.83,
+    "risk_on": true
+   },
+   {
+    "date": "2026-01-26",
+    "spy": 687.36,
+    "ma200": 630.04,
+    "risk_on": true
+   },
+   {
+    "date": "2026-02-02",
+    "spy": 690.02,
+    "ma200": 634.06,
+    "risk_on": true
+   },
+   {
+    "date": "2026-02-09",
+    "spy": 688.57,
+    "ma200": 638.19,
+    "risk_on": true
+   },
+   {
+    "date": "2026-02-17",
+    "spy": 677.56,
+    "ma200": 641.65,
+    "risk_on": true
+   },
+   {
+    "date": "2026-02-24",
+    "spy": 682.02,
+    "ma200": 644.85,
+    "risk_on": true
+   },
+   {
+    "date": "2026-03-03",
+    "spy": 675.06,
+    "ma200": 647.7,
+    "risk_on": true
+   },
+   {
+    "date": "2026-03-10",
+    "spy": 671.93,
+    "ma200": 650.0,
+    "risk_on": true
+   },
+   {
+    "date": "2026-03-17",
+    "spy": 665.59,
+    "ma200": 652.18,
+    "risk_on": true
+   },
+   {
+    "date": "2026-03-24",
+    "spy": 649.89,
+    "ma200": 653.87,
     "risk_on": false
    },
    {
-    "date": "2025-05-16",
-    "spy": 584.5,
-    "ma200": 562.44,
-    "risk_on": true
-   },
-   {
-    "date": "2025-05-23",
-    "spy": 569.66,
-    "ma200": 563.88,
-    "risk_on": true
-   },
-   {
-    "date": "2025-06-02",
-    "spy": 583.04,
-    "ma200": 565.44,
-    "risk_on": true
-   },
-   {
-    "date": "2025-06-09",
-    "spy": 589.9,
-    "ma200": 566.63,
-    "risk_on": true
-   },
-   {
-    "date": "2025-06-16",
-    "spy": 592.85,
-    "ma200": 567.77,
-    "risk_on": true
-   },
-   {
-    "date": "2025-06-24",
-    "spy": 598.64,
-    "ma200": 568.97,
-    "risk_on": true
-   },
-   {
-    "date": "2025-07-01",
-    "spy": 609.37,
-    "ma200": 570.76,
-    "risk_on": true
-   },
-   {
-    "date": "2025-07-09",
-    "spy": 615.69,
-    "ma200": 572.43,
-    "risk_on": true
-   },
-   {
-    "date": "2025-07-16",
-    "spy": 615.85,
-    "ma200": 573.9,
-    "risk_on": true
-   },
-   {
-    "date": "2025-07-23",
-    "spy": 625.71,
-    "ma200": 575.47,
-    "risk_on": true
-   },
-   {
-    "date": "2025-07-30",
-    "spy": 625.95,
-    "ma200": 577.18,
-    "risk_on": true
-   },
-   {
-    "date": "2025-08-06",
-    "spy": 624.3,
-    "ma200": 578.51,
-    "risk_on": true
-   },
-   {
-    "date": "2025-08-13",
-    "spy": 636.24,
-    "ma200": 580.03,
-    "risk_on": true
-   },
-   {
-    "date": "2025-08-20",
-    "spy": 629.55,
-    "ma200": 581.69,
-    "risk_on": true
-   },
-   {
-    "date": "2025-08-27",
-    "spy": 637.96,
-    "ma200": 583.49,
-    "risk_on": true
-   },
-   {
-    "date": "2025-09-04",
-    "spy": 640.42,
-    "ma200": 584.81,
-    "risk_on": true
-   },
-   {
-    "date": "2025-09-11",
-    "spy": 648.81,
-    "ma200": 586.46,
-    "risk_on": true
-   },
-   {
-    "date": "2025-09-18",
-    "spy": 653.38,
-    "ma200": 588.15,
-    "risk_on": true
-   },
-   {
-    "date": "2025-09-25",
-    "spy": 651.03,
-    "ma200": 589.75,
-    "risk_on": true
-   },
-   {
-    "date": "2025-10-02",
-    "spy": 662.08,
-    "ma200": 591.43,
-    "risk_on": true
-   },
-   {
-    "date": "2025-10-09",
-    "spy": 664.0,
-    "ma200": 593.42,
-    "risk_on": true
-   },
-   {
-    "date": "2025-10-16",
-    "spy": 653.59,
-    "ma200": 595.13,
-    "risk_on": true
-   },
-   {
-    "date": "2025-10-23",
-    "spy": 664.59,
-    "ma200": 597.24,
-    "risk_on": true
-   },
-   {
-    "date": "2025-10-30",
-    "spy": 672.57,
-    "ma200": 599.81,
-    "risk_on": true
-   },
-   {
-    "date": "2025-11-06",
-    "spy": 663.16,
-    "ma200": 601.91,
-    "risk_on": true
-   },
-   {
-    "date": "2025-11-13",
-    "spy": 664.87,
-    "ma200": 603.85,
-    "risk_on": true
-   },
-   {
-    "date": "2025-11-20",
-    "spy": 645.57,
-    "ma200": 605.48,
-    "risk_on": true
-   },
-   {
-    "date": "2025-11-28",
-    "spy": 676.1,
-    "ma200": 607.32,
-    "risk_on": true
-   },
-   {
-    "date": "2025-12-05",
-    "spy": 678.37,
-    "ma200": 609.23,
-    "risk_on": true
-   },
-   {
-    "date": "2025-12-12",
-    "spy": 674.48,
-    "ma200": 611.61,
-    "risk_on": true
-   },
-   {
-    "date": "2025-12-19",
-    "spy": 675.32,
-    "ma200": 614.11,
-    "risk_on": true
-   },
-   {
-    "date": "2025-12-29",
-    "spy": 682.52,
-    "ma200": 617.44,
-    "risk_on": true
-   },
-   {
-    "date": "2026-01-06",
-    "spy": 686.45,
-    "ma200": 620.62,
-    "risk_on": true
-   },
-   {
-    "date": "2026-01-13",
-    "spy": 688.39,
-    "ma200": 623.78,
-    "risk_on": true
-   },
-   {
-    "date": "2026-01-21",
-    "spy": 680.09,
-    "ma200": 627.17,
-    "risk_on": true
-   },
-   {
-    "date": "2026-01-28",
-    "spy": 690.03,
-    "ma200": 631.66,
-    "risk_on": true
-   },
-   {
-    "date": "2026-02-04",
-    "spy": 680.87,
-    "ma200": 635.72,
-    "risk_on": true
-   },
-   {
-    "date": "2026-02-11",
-    "spy": 686.6,
-    "ma200": 639.66,
-    "risk_on": true
-   },
-   {
-    "date": "2026-02-19",
-    "spy": 679.18,
-    "ma200": 642.92,
-    "risk_on": true
-   },
-   {
-    "date": "2026-02-26",
-    "spy": 683.96,
-    "ma200": 646.16,
-    "risk_on": true
-   },
-   {
-    "date": "2026-03-05",
-    "spy": 676.03,
-    "ma200": 648.65,
-    "risk_on": true
-   },
-   {
-    "date": "2026-03-12",
-    "spy": 660.9,
-    "ma200": 650.94,
-    "risk_on": true
-   },
-   {
-    "date": "2026-03-19",
-    "spy": 654.69,
-    "ma200": 652.92,
-    "risk_on": true
-   },
-   {
-    "date": "2026-03-26",
-    "spy": 641.84,
-    "ma200": 654.45,
+    "date": "2026-03-31",
+    "spy": 647.06,
+    "ma200": 655.09,
     "risk_on": false
    },
    {
-    "date": "2026-04-02",
-    "spy": 652.52,
-    "ma200": 655.72,
-    "risk_on": false
-   },
-   {
-    "date": "2026-04-10",
-    "spy": 676.04,
-    "ma200": 657.64,
+    "date": "2026-04-08",
+    "spy": 672.6,
+    "ma200": 656.83,
     "risk_on": true
    },
    {
-    "date": "2026-04-17",
-    "spy": 706.56,
-    "ma200": 659.87,
+    "date": "2026-04-15",
+    "spy": 696.41,
+    "ma200": 658.94,
     "risk_on": true
    },
    {
-    "date": "2026-04-24",
-    "spy": 710.34,
-    "ma200": 662.17,
+    "date": "2026-04-22",
+    "spy": 707.63,
+    "ma200": 661.23,
     "risk_on": true
    },
    {
-    "date": "2026-05-01",
-    "spy": 717.02,
-    "ma200": 664.57,
+    "date": "2026-04-29",
+    "spy": 707.99,
+    "ma200": 663.56,
     "risk_on": true
    },
    {
-    "date": "2026-05-08",
-    "spy": 733.9,
-    "ma200": 667.18,
+    "date": "2026-05-06",
+    "spy": 730.13,
+    "ma200": 666.1,
     "risk_on": true
    },
    {
-    "date": "2026-05-15",
-    "spy": 735.44,
-    "ma200": 669.94,
+    "date": "2026-05-13",
+    "spy": 738.57,
+    "ma200": 668.81,
     "risk_on": true
    },
    {
-    "date": "2026-05-22",
-    "spy": 741.88,
-    "ma200": 672.84,
+    "date": "2026-05-20",
+    "spy": 737.51,
+    "ma200": 671.66,
     "risk_on": true
    },
    {
-    "date": "2026-06-01",
-    "spy": 754.72,
-    "ma200": 675.85,
+    "date": "2026-05-28",
+    "spy": 750.8,
+    "ma200": 674.66,
     "risk_on": true
    },
    {
-    "date": "2026-06-08",
-    "spy": 735.49,
-    "ma200": 678.66,
+    "date": "2026-06-04",
+    "spy": 753.27,
+    "ma200": 677.62,
     "risk_on": true
    },
    {
-    "date": "2026-06-15",
-    "spy": 751.03,
-    "ma200": 681.19,
+    "date": "2026-06-11",
+    "spy": 734.04,
+    "ma200": 680.12,
     "risk_on": true
    },
    {
-    "date": "2026-06-23",
-    "spy": 731.76,
-    "ma200": 683.79,
+    "date": "2026-06-18",
+    "spy": 744.89,
+    "ma200": 682.79,
     "risk_on": true
    },
    {
-    "date": "2026-06-30",
-    "spy": 744.92,
-    "ma200": 686.1,
+    "date": "2026-06-26",
+    "spy": 727.18,
+    "ma200": 685.14,
     "risk_on": true
    },
    {
-    "date": "2026-07-08",
-    "spy": 743.55,
-    "ma200": 688.45,
+    "date": "2026-07-06",
+    "spy": 749.42,
+    "ma200": 687.52,
     "risk_on": true
    },
    {
-    "date": "2026-07-15",
-    "spy": 752.94,
-    "ma200": 690.83,
+    "date": "2026-07-13",
+    "spy": 747.31,
+    "ma200": 689.84,
     "risk_on": true
    },
    {
-    "date": "2026-07-22",
-    "spy": 745.56,
-    "ma200": 692.97,
+    "date": "2026-07-20",
+    "spy": 740.25,
+    "ma200": 692.13,
     "risk_on": true
    },
    {
-    "date": "2026-07-29",
-    "spy": 727.65,
-    "ma200": 694.77,
+    "date": "2026-07-27",
+    "spy": 737.26,
+    "ma200": 694.08,
     "risk_on": true
    },
    {
-    "date": "2026-08-05",
-    "spy": 767.88,
-    "ma200": 697.31,
+    "date": "2026-08-03",
+    "spy": 755.79,
+    "ma200": 696.18,
     "risk_on": true
    },
    {
-    "date": "2026-08-12",
-    "spy": 770.58,
-    "ma200": 700.0,
+    "date": "2026-08-10",
+    "spy": 771.12,
+    "ma200": 698.93,
     "risk_on": true
    },
    {
-    "date": "2026-08-19",
-    "spy": 767.15,
-    "ma200": 702.37,
+    "date": "2026-08-17",
+    "spy": 770.76,
+    "ma200": 701.47,
     "risk_on": true
    },
    {
-    "date": "2026-08-26",
-    "spy": 764.18,
-    "ma200": 704.68,
+    "date": "2026-08-24",
+    "spy": 761.58,
+    "ma200": 703.7,
     "risk_on": true
    },
    {
-    "date": "2026-09-02",
-    "spy": 763.26,
-    "ma200": 707.03,
+    "date": "2026-08-31",
+    "spy": 765.15,
+    "ma200": 706.12,
     "risk_on": true
    },
    {
-    "date": "2026-09-10",
-    "spy": 755.95,
-    "ma200": 709.74,
+    "date": "2026-09-08",
+    "spy": 764.06,
+    "ma200": 708.67,
     "risk_on": true
    },
    {
-    "date": "2026-09-17",
-    "spy": 760.71,
-    "ma200": 712.04,
+    "date": "2026-09-15",
+    "spy": 755.51,
+    "ma200": 711.22,
     "risk_on": true
    },
    {
-    "date": "2026-09-24",
-    "spy": 767.18,
-    "ma200": 714.36,
+    "date": "2026-09-22",
+    "spy": 773.38,
+    "ma200": 713.46,
     "risk_on": true
    },
    {
-    "date": "2026-10-01",
-    "spy": 763.99,
-    "ma200": 716.56,
+    "date": "2026-09-29",
+    "spy": 764.2,
+    "ma200": 715.71,
     "risk_on": true
    },
    {
-    "date": "2026-10-08",
-    "spy": 773.93,
-    "ma200": 719.16,
+    "date": "2026-10-06",
+    "spy": 779.09,
+    "ma200": 718.13,
     "risk_on": true
    },
    {
-    "date": "2026-10-15",
-    "spy": 771.79,
-    "ma200": 721.47,
+    "date": "2026-10-13",
+    "spy": 778.01,
+    "ma200": 720.6,
     "risk_on": true
    },
    {
-    "date": "2026-10-22",
-    "spy": 763.96,
-    "ma200": 723.62,
+    "date": "2026-10-20",
+    "spy": 769.05,
+    "ma200": 722.78,
     "risk_on": true
    },
    {
-    "date": "2026-10-29",
-    "spy": 769.36,
-    "ma200": 725.63,
+    "date": "2026-10-27",
+    "spy": 769.66,
+    "ma200": 724.81,
     "risk_on": true
    },
    {
-    "date": "2026-11-05",
-    "spy": 733.0,
-    "ma200": 727.39,
+    "date": "2026-11-03",
+    "spy": 754.35,
+    "ma200": 726.65,
     "risk_on": true
    }
   ]

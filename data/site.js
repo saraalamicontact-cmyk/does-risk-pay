@@ -1,18 +1,18 @@
 window.SITE_DATA = {
- "updated": "2026-11-09 22:23",
+ "updated": "2026-11-10 16:33",
  "monitor": {
-  "as_of": "2026-11-09",
+  "as_of": "2026-11-10",
   "regime": "Risk-on",
-  "spy_drawdown": -3.4,
+  "spy_drawdown": -4.0,
   "overweight": 7,
   "underweight": 2,
   "sectors": [
    {
     "ticker": "XLV",
     "sector": "Health care",
-    "return_1m": 10.3,
-    "return_3m": 12.5,
-    "relative_3m": 14.6,
+    "return_1m": 8.9,
+    "return_3m": 11.6,
+    "relative_3m": 14.5,
     "beta": 0.31,
     "style": "Defensive",
     "above_ma200": true,
@@ -21,32 +21,10 @@ window.SITE_DATA = {
    {
     "ticker": "XLP",
     "sector": "Consumer staples",
-    "return_1m": 8.9,
-    "return_3m": 8.0,
-    "relative_3m": 10.1,
+    "return_1m": 7.5,
+    "return_3m": 7.4,
+    "relative_3m": 10.3,
     "beta": -0.05,
-    "style": "Defensive",
-    "above_ma200": true,
-    "signal": "Overweight"
-   },
-   {
-    "ticker": "XLE",
-    "sector": "Energy",
-    "return_1m": -4.8,
-    "return_3m": 2.3,
-    "relative_3m": 4.3,
-    "beta": -0.34,
-    "style": "Defensive",
-    "above_ma200": true,
-    "signal": "Overweight"
-   },
-   {
-    "ticker": "XLRE",
-    "sector": "Real estate",
-    "return_1m": 7.3,
-    "return_3m": 2.1,
-    "relative_3m": 4.2,
-    "beta": 0.31,
     "style": "Defensive",
     "above_ma200": true,
     "signal": "Overweight"
@@ -54,32 +32,43 @@ window.SITE_DATA = {
    {
     "ticker": "XLY",
     "sector": "Consumer discretionary",
-    "return_1m": 7.2,
-    "return_3m": 1.7,
-    "relative_3m": 3.8,
+    "return_1m": 7.3,
+    "return_3m": 2.4,
+    "relative_3m": 5.3,
     "beta": 1.11,
     "style": "Aggressive",
     "above_ma200": true,
     "signal": "Overweight"
    },
    {
-    "ticker": "XLU",
-    "sector": "Utilities",
-    "return_1m": 5.8,
-    "return_3m": 1.1,
-    "relative_3m": 3.2,
-    "beta": 0.12,
+    "ticker": "XLE",
+    "sector": "Energy",
+    "return_1m": -6.1,
+    "return_3m": 2.2,
+    "relative_3m": 5.1,
+    "beta": -0.33,
     "style": "Defensive",
-    "above_ma200": false,
-    "signal": "Neutral"
+    "above_ma200": true,
+    "signal": "Overweight"
    },
    {
     "ticker": "XLF",
     "sector": "Financials",
-    "return_1m": 6.0,
-    "return_3m": 0.7,
-    "relative_3m": 2.8,
+    "return_1m": 5.5,
+    "return_3m": 0.6,
+    "relative_3m": 3.6,
     "beta": 0.61,
+    "style": "Defensive",
+    "above_ma200": true,
+    "signal": "Overweight"
+   },
+   {
+    "ticker": "XLRE",
+    "sector": "Real estate",
+    "return_1m": 5.8,
+    "return_3m": 0.5,
+    "relative_3m": 3.4,
+    "beta": 0.31,
     "style": "Defensive",
     "above_ma200": true,
     "signal": "Overweight"
@@ -87,22 +76,44 @@ window.SITE_DATA = {
    {
     "ticker": "XLB",
     "sector": "Materials",
-    "return_1m": 7.1,
-    "return_3m": -0.1,
-    "relative_3m": 2.0,
+    "return_1m": 6.2,
+    "return_3m": 0.3,
+    "relative_3m": 3.3,
     "beta": 0.69,
     "style": "Defensive",
     "above_ma200": true,
     "signal": "Overweight"
    },
    {
+    "ticker": "XLU",
+    "sector": "Utilities",
+    "return_1m": 4.6,
+    "return_3m": 0.1,
+    "relative_3m": 3.0,
+    "beta": 0.12,
+    "style": "Defensive",
+    "above_ma200": false,
+    "signal": "Neutral"
+   },
+   {
     "ticker": "XLC",
     "sector": "Communication services",
-    "return_1m": -2.7,
-    "return_3m": -3.2,
-    "relative_3m": -1.1,
+    "return_1m": -3.9,
+    "return_3m": -2.5,
+    "relative_3m": 0.4,
     "beta": 0.65,
     "style": "Defensive",
+    "above_ma200": false,
+    "signal": "Neutral"
+   },
+   {
+    "ticker": "XLI",
+    "sector": "Industrials",
+    "return_1m": -1.1,
+    "return_3m": -9.8,
+    "relative_3m": -6.8,
+    "beta": 0.95,
+    "style": "Neutral",
     "above_ma200": false,
     "signal": "Underweight"
    },
@@ -110,21 +121,10 @@ window.SITE_DATA = {
     "ticker": "XLK",
     "sector": "Technology",
     "return_1m": -14.0,
-    "return_3m": -8.1,
-    "relative_3m": -6.0,
+    "return_3m": -10.5,
+    "relative_3m": -7.5,
     "beta": 1.78,
     "style": "Aggressive",
-    "above_ma200": true,
-    "signal": "Neutral"
-   },
-   {
-    "ticker": "XLI",
-    "sector": "Industrials",
-    "return_1m": -0.2,
-    "return_3m": -8.8,
-    "relative_3m": -6.7,
-    "beta": 0.95,
-    "style": "Neutral",
     "above_ma200": false,
     "signal": "Underweight"
    }
@@ -728,6 +728,12 @@ window.SITE_DATA = {
     "date": "2026-11-03",
     "spy": 754.35,
     "ma200": 726.65,
+    "risk_on": true
+   },
+   {
+    "date": "2026-11-10",
+    "spy": 747.84,
+    "ma200": 728.29,
     "risk_on": true
    }
   ]
